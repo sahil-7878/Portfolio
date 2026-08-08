@@ -8,7 +8,7 @@ A modern and responsive personal portfolio website designed to showcase my skill
 Full Stack Developer
 
 * GitHub: https://github.com/sahil-7878
-* Portfolio: https://myportfolio-eta-nine-33.vercel.app/
+* Portfolio: https://portfolio-sn15.vercel.app
 
 ---
 
@@ -191,7 +191,7 @@ If you would like to connect or collaborate, feel free to reach out.
 **Sahil Nerpagar**
 
 * GitHub: https://github.com/sahil-7878
-* Portfolio: https://myportfolio-eta-nine-33.vercel.app/
+* Portfolio: https://portfolio-sn15.vercel.app
 
 ---
 
