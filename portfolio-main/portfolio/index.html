@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Nerpagar | Portfolio</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particles"></div>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><span>Portfolio</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-image hidden" style="transition-delay:100ms;">
+            <img src="profile.jpeg" alt="Sahil Nerpagar" onclick="openImage()">
+        </div>
+        <div class="hero-content">
+            <h3 class="hidden">Hi, I'm</h3>
+            <h1 class="hidden" style="transition-delay:200ms;"><span>Sahil</span> Nerpagar</h1>
+            <h2 class="hidden" style="transition-delay:400ms;">
+                <span id="typed-text"></span>
+                <span class="cursor">|</span>
+            </h2>
+            <p class="hidden" style="transition-delay:600ms;">
+                Passionate about software development and creating solutions that make an impact.
+                I enjoy learning new technologies, building projects, and continuously improving
+                my skills through hands-on experience.
+            </p>
+            <p class="hidden" style="transition-delay:600ms;">
+                This portfolio reflects my journey, projects, and dedication to learning,
+                innovation, and professional growth.
+            </p>
+            <div class="hero-btns hidden" style="transition-delay:900ms;">
+                <a href="#Achievements" class="btn" onclick="openAchievement()">
+                    Achievements <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="resume.jpg" class="btn-outline" download>
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About, Skills, Education -->
+    <section id="about" class="grid-section">
+
+        <!-- About -->
+        <div class="card hidden" style="transition-delay:0.1s;">
+            <h2><i class="fa-regular fa-user"></i> About Me</h2>
+            <p class="about-text">
+                Hello! I'm Sahil Nerpagar, a second-year MCA
+                student at Bhagwan Mahavir Of college,Surat.
+                I enjoy turning ideas into practical solutions and continuously
+                challenging myself through hands-on learning and real-world
+                projects. I believe in learning by building, improving through
+                experience, and staying curious about new technologies.
+                <br>
+                Currently, I am focused on growing as a developer, strengthening
+                my problem-solving abilities, and preparing for opportunities
+                that help me gain industry experience and create meaningful impact.
+            </p>
+            <button class="read-btn" onclick="openAbout()">
+                Read More <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- Skills -->
+        <div class="card hidden" id="skills" style="transition-delay:0.4s;">
+            <h2><i class="fa-solid fa-code"></i> Skills</h2>
+            <div class="tech-grid">
+                <div class="tech-item"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+                <div class="tech-item"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+                <div class="tech-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
+                <div class="tech-item"><i class="devicon-react-plain"></i><span>React.js</span></div>
+                <div class="tech-item"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+                <div class="tech-item"><i class="devicon-express-original"></i><span>Express.js</span></div>
+                <div class="tech-item"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+                <div class="tech-item"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
+                <div class="tech-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+                <div class="tech-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                <div class="tech-item"><i class="devicon-python-plain"></i><span>Python</span></div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="card hidden education-card" id="education" style="transition-delay:0.6s;">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <span class="year-badge">2026 - Present</span>
+                        <div class="edu-top">
+                            <div>
+                                <h3>🎓 Master of Computer Applications (MCA)</h3>
+                                <p class="college lpu-college">
+                                    <i class="fa-solid fa-building-columns"></i> Bhagwan Mahavir University, Surat
+                                </p>
+                                <p class="edu-desc">
+                                    Currently pursuing MCA with a focus on Full Stack Web Development, Software
+                                    Engineering, Database Management, and Modern Web Technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="timeline-content">
+                        <span class="year-badge">2022 - 2025</span>
+                        <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
+                        <p class="college">
+                            <i class="fa-solid fa-building-columns"></i> SDJ International College
+                            Veer Narmad South Gujarat University (VNSGU), Surat
+                        </p>
+                        <p class="edu-desc">CGPA: 7.72 / 10</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="timeline-content">
+                        <span class="year-badge">2020 - 2022</span>
+                        <h3>🎓 Higher Secondary Certificate (HSC) – Class 12</h3>
+                        <p class="college">
+                            <i class="fa-solid fa-school"></i> Shree Gurukrupa Vidhya Sankul GSEB Board
+                        </p>
+                        <p class="edu-desc">Percentage: 75%</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="section-title" style="margin-bottom: 50px;">
+            <span>••• STATS</span>
+            <h2>Professional <span>Highlights</span></h2>
+            <p>My journey in numbers — a snapshot of my learning and achievements.</p>
+        </div>
+        <div class="stats-container">
+            <div class="stat-card hidden">
+                <i class="fa-solid fa-code stat-icon"></i>
+                <div class="stat-number" data-count="3">0+</div>
+                <h3>Projects Completed</h3>
+                <p>Real-world development projects</p>
+            </div>
+            <div class="stat-card hidden">
+                <i class="fa-solid fa-laptop-code stat-icon"></i>
+                <div class="stat-number" data-count="1">0+</div>
+                <h3>Years Learning</h3>
+                <p>Continuous coding practice</p>
+            </div>
+            <div class="stat-card hidden">
+                <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                <div class="stat-number" style="font-size:2.2rem;">MCA</div>
+                <h3>Student</h3>
+                <p>Master of Computer Applications</p>
+            </div>
+            <div class="stat-card hidden">
+                <i class="fa-solid fa-award stat-icon"></i>
+                <div class="stat-number" data-count="5">0+</div>
+                <h3>Certificates</h3>
+                <p>Technical courses and achievements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="premium-projects">
+        <div class="project-header">
+            <h2><i class="fa-solid fa-code"></i> Projects</h2>
+        </div>
+        <div class="premium-grid">
+
+            <!-- Project 1 -->
+            <div class="premium-card hidden card-1">
+                <div class="project-image"><img src="Netflix clone.jpg" alt="Netflix"></div>
+                <div class="project-info">
+                    <div class="title-row">
+                        <div class="title-left">
+                            <div class="project-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                            <h3>Nerflix Clone</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Netflix Clone is a full-stack movie streaming web application that allows users to browse movies
+                        while administrators can add, update, and delete movie records through a secure dashboard. It
+                        features a responsive interface, dynamic movie management, and a modern user experience.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag-html">HTML5</span>
+                        <span class="tag-css">CSS3</span>
+                        <span class="tag-js">JavaScript</span>
+                        <span class="tag-node">Node.js</span>
+                        <span class="tag-express">Express.js</span>
+                        <span class="tag-mongo">MongoDB</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://vikash-kumar081.github.io/weather-app/" target="_blank" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="https://github.com/sahil-7878/Netflix--Clone" target="_blank" class="github-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="premium-card hidden card-2">
+                <div class="project-image"><img src="blog.jpg" alt="blog"></div>
+                <div class="project-info">
+                    <div class="title-row">
+                        <div class="title-left">
+                            <div class="project-icon"><i class="fa-brands fa-blogger"></i></div>
+                            <h3>Blog Publishing Platform</h3>
+                        </div>
+                    </div>
+                    <p>
+                        A full-stack MERN Blog Publishing Platform that enables users to register, log in securely, and
+                        create, edit, delete, and manage blog posts. The application features JWT-based authentication,
+                        role-based access, responsive design, and a clean user interface, providing a seamless blogging
+                        experience across desktop and mobile devices.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag-html">HTML5</span>
+                        <span class="tag-css">CSS3</span>
+                        <span class="tag-js">JavaScript</span>
+                        <span class="tag-node">Node.js</span>
+                        <span class="tag-express">Express.js</span>
+                        <span class="tag-mongo">MongoDB</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://campuskart2.onrender.com?utm_source=chatgpt.com" target="_blank" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="https://github.com/sahil-7878/Blog-Publishing-Website" target="_blank" class="github-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="premium-card hidden card-3">
+                <div class="project-image"><img src="franky junction.jpg" alt="Portfolio"></div>
+                <div class="project-info">
+                    <div class="title-row">
+                        <div class="title-left">
+                            <div class="project-icon"><i class="fa-solid fa-burger"></i></div>
+                            <h3>Franky Junction – Online Food Ordering Website</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Franky Junction is a responsive online food ordering website developed to provide users with a
+                        simple and convenient way to explore menus and place food orders. The website features an
+                        intuitive interface, categorized food items, and a mobile-friendly design, ensuring a smooth
+                        user experience across all devices.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag-html">HTML</span>
+                        <span class="tag-css">CSS</span>
+                        <span class="tag-js">JavaScript</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://frankie-mauve.vercel.app/" target="_blank" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="https://github.com/sahil-7878/frankie" target="_blank" class="github-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section hidden">
+        <div class="section-title">
+            <span>••• SERVICES</span>
+            <h2>What Can <span>I Do</span></h2>
+            <p>I create modern, responsive and scalable digital solutions.</p>
+        </div>
+        <div class="services-container">
+            <div class="service-card hidden">
+                <i class="fa-solid fa-code"></i>
+                <h3>Frontend Development</h3>
+                <p>Building responsive and interactive websites using HTML, CSS, JavaScript and modern UI practices.</p>
+            </div>
+            <div class="service-card hidden">
+                <i class="fa-solid fa-server"></i>
+                <h3>Backend Development</h3>
+                <p>Creating APIs and backend systems using Node.js, Express.js and MongoDB.</p>
+            </div>
+            <div class="service-card hidden">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Full Stack Development</h3>
+                <p>Developing complete web applications from frontend design to database integration.</p>
+            </div>
+            <div class="service-card hidden">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Responsive Design</h3>
+                <p>Creating websites that work smoothly on desktop, tablet and mobile devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect -->
+    <section class="connect-section hidden">
+        <div class="section-title">
+            <span>••• SOCIAL</span>
+            <h2>Let's <span>Connect</span></h2>
+            <p>Let's connect and create something amazing together.</p>
+        </div>
+        <div class="social-container">
+            <a href="mailto:mrsahil7878@gmail.com" class="social-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+            </a>
+            <a href="https://github.com/sahil-7878" target="_blank" class="social-card">
+                <i class="fa-brands fa-github"></i>
+                <h3>GitHub</h3>
+            </a>
+            <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" class="social-card">
+                <i class="fa-brands fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+            </a>
+            <a href="#" class="social-card">
+                <i class="fa-brands fa-instagram"></i>
+                <h3>Instagram</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="hidden">
+        <div class="contact-heading">
+            <span>••• CONTACT</span>
+            <h2>Let's Build <span>Something Great</span></h2>
+            <p>Have a project in mind or a question? Drop me a message, I reply fast.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <a href="mailto:mrsahil7878@gmail.com" class="contact-card hidden" style="transition-delay:0.1s;">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>mrsahil7878@gmail.com</p>
+                    </div>
+                    <span>→</span>
+                </a>
+                <a href="https://github.com/sahil-7878" target="_blank" class="contact-card hidden" style="transition-delay:0.3s;">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>sahil-7878</p>
+                    </div>
+                    <span>→</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" class="contact-card hidden" style="transition-delay:0.5s;">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p>Sahil Nerpagar</p>
+                    </div>
+                    <span>→</span>
+                </a>
+                <div class="contact-card hidden" style="transition-delay:0.7s;">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Surat, Gujrat India</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form hidden" style="transition-delay:0.9s;" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="c5e62e09-566a-462c-a292-d1e8403ce820">
+                <input type="hidden" name="subject" value="New Portfolio Message">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required>
+                <input type="text" name="subject_line" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message 🚀</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>© 2026 Sahil Nerpagar | All Rights Reserved ❤️</footer>
+
+    <!-- Popups -->
+    <div class="about-popup" id="aboutPopup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeAbout()">&times;</span>
+            <h2>About Me</h2>
+            <p>
+                Beyond academics, I strongly believe that learning should
+                never stop. I enjoy exploring new ideas, understanding
+                different perspectives, and continuously working on my
+                personal and professional growth.
+                I see every challenge as an opportunity to learn something
+                new and improve myself. Whether it is learning a new concept,
+                working on a project, or solving a difficult problem, I try
+                to approach it with patience, dedication, and a positive mindset.
+                Apart from technical growth, I value discipline, teamwork,
+                adaptability, and effective communication. These qualities
+                help me work better with others and prepare me for real-world
+                professional environments.
+                In the coming years, I aim to gain industry experience,
+                contribute to impactful projects, and grow into a confident
+                Software Engineer who can create innovative solutions and
+                deliver value to people through technology.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-popup" id="achievementPopup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeAchievement()">&times;</span>
+            <h2>🏆 Achievements & Certifications</h2>
+            <p><a href="cirtificate/html,css.jpeg" target="_blank">🏆 Html, CSS course Certificate</a></p>
+            <p><a href="cirtificate/full stack.jpeg" target="_blank">💻 Full Stack Development Certificate</a></p>
+            <p><a href="cirtificate/c programming cirtificate.png" target="_blank">💻 C Programming Certificate</a></p>
+        </div>
+    </div>
+
+    <div id="imagePopup" class="image-popup">
+        <span class="close-image" onclick="closeImage()">&times;</span>
+        <img src="profile.jpeg" class="full-image">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
