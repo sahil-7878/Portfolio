@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         whatsappMsg += '💬 Message: ' + message;
         
-        const phoneNumber = '91635359915993';
+        const phoneNumber = '916359915993';
         const whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + whatsappMsg;
         window.open(whatsappURL, '_blank');
         
