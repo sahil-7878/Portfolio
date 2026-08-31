@@ -1,4 +1,7 @@
-// Typing Effect - Hero
+// ============================================================
+// TYPING EFFECT - HERO
+// ============================================================
+
 const typedText = document.getElementById('typed-text');
 const roles = [
     'MCA Student',
@@ -42,7 +45,10 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 500);
 });
 
-// Navbar - Active link on scroll
+// ============================================================
+// NAVBAR - ACTIVE LINK ON SCROLL
+// ============================================================
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -62,7 +68,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Scroll Animations - Intersection Observer
+// ============================================================
+// SCROLL ANIMATIONS - INTERSECTION OBSERVER
+// ============================================================
+
 const hiddenElements = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
@@ -76,7 +85,10 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenElements.forEach(el => observer.observe(el));
 
-// Skill Bars - Animate fill width on scroll
+// ============================================================
+// SKILL BARS - ANIMATE FILL WIDTH ON SCROLL
+// ============================================================
+
 const skillFills = document.querySelectorAll('.fill');
 
 const skillObserver = new IntersectionObserver((entries) => {
@@ -94,7 +106,10 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 skillFills.forEach(fill => skillObserver.observe(fill));
 
-// Skill Percentage - Animate numbers counting up
+// ============================================================
+// SKILL PERCENTAGE - ANIMATE NUMBERS COUNTING UP
+// ============================================================
+
 const percentElements = document.querySelectorAll('.percent');
 
 const percentObserver = new IntersectionObserver((entries) => {
@@ -118,7 +133,10 @@ const percentObserver = new IntersectionObserver((entries) => {
 
 percentElements.forEach(el => percentObserver.observe(el));
 
-// Stats Counter - Animate numbers counting up (FASTER)
+// ============================================================
+// STATS COUNTER - ANIMATE NUMBERS COUNTING UP
+// ============================================================
+
 const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
 const statObserver = new IntersectionObserver((entries) => {
@@ -127,7 +145,7 @@ const statObserver = new IntersectionObserver((entries) => {
             const el = entry.target;
             const target = parseInt(el.getAttribute('data-count')) || 0;
             let current = 0;
-            const increment = target / 15;  // Increased from 50 → 15 (faster)
+            const increment = target / 15;
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
@@ -135,12 +153,16 @@ const statObserver = new IntersectionObserver((entries) => {
                     clearInterval(timer);
                 }
                 el.textContent = Math.floor(current) + '+';
-            }, 30);  // Reduced from 50ms → 30ms (faster)
+            }, 30);
         }
     });
 }, { threshold: 0.4 });
 
 statNumbers.forEach(el => statObserver.observe(el));
+
+// ============================================================
+// POPUP FUNCTIONS
+// ============================================================
 
 // About Popup
 function openAbout() {
@@ -182,12 +204,105 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Contact Form - Submit handler
-const form = document.querySelector('.contact-form');
-if (form) {
-    form.addEventListener('submit', (e) => {
+// ============================================================
+// WHATSAPP CONTACT FORM HANDLER (NEW)
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get form elements
+    const form = document.getElementById('whatsappForm');
+    const status = document.getElementById('formStatus');
+    
+    // Check if form exists on page
+    if (!form) {
+        return;
+    }
+    
+    // Form submit handler
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        form.reset();
+        
+        // Get form values
+        const name = document.getElementById('formName').value.trim();
+        const email = document.getElementById('formEmail').value.trim();
+        const subject = document.getElementById('formSubject').value.trim();
+        const message = document.getElementById('formMessage').value.trim();
+        
+        // Validation
+        if (!name || !email || !message) {
+            status.innerHTML = '⚠️ Please fill in all fields.';
+            status.style.color = '#ff6b6b';
+            return;
+        }
+        
+        // Create WhatsApp message
+        let whatsappMsg = 'New message from Portfolio:%0A%0A';
+        whatsappMsg += '👤 Name: ' + name + '%0A';
+        whatsappMsg += '📧 Email: ' + email + '%0A';
+        if (subject) {
+            whatsappMsg += '📌 Subject: ' + subject + '%0A';
+        }
+        whatsappMsg += '💬 Message: ' + message;
+        
+        // WhatsApp number
+        const phoneNumber = '91635359915993';
+        
+        // Open WhatsApp
+        const whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + whatsappMsg;
+        window.open(whatsappURL, '_blank');
+        
+        // Show success status
+        status.innerHTML = '✅ Redirecting to WhatsApp...';
+        status.style.color = '#25D366';
+        
+        // Reset form after 2 seconds
+        setTimeout(function() {
+            form.reset();
+            status.innerHTML = '✨ Message sent! Check WhatsApp.';
+        }, 2000);
+    });
+});
+
+// ============================================================
+// EMAIL FORM HANDLER (Optional - keeps old functionality)
+// ============================================================
+
+function sendEmailForm() {
+    const name = document.getElementById('formName').value.trim();
+    const email = document.getElementById('formEmail').value.trim();
+    const subject = document.getElementById('formSubject').value.trim();
+    const message = document.getElementById('formMessage').value.trim();
+    const status = document.getElementById('formStatus');
+    
+    if (!name || !email || !message) {
+        status.innerHTML = '⚠️ Please fill in all fields.';
+        status.style.color = '#ff6b6b';
+        return;
+    }
+    
+    const form = document.getElementById('whatsappForm');
+    const formData = new FormData(form);
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        if (data.success) {
+            status.innerHTML = '✅ Email sent successfully!';
+            status.style.color = '#25D366';
+            form.reset();
+        } else {
+            status.innerHTML = '❌ Something went wrong. Try again.';
+            status.style.color = '#ff6b6b';
+        }
+    })
+    .catch(function(error) {
+        status.innerHTML = '❌ Network error. Please try again.';
+        status.style.color = '#ff6b6b';
     });
 }
+
