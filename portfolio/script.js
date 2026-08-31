@@ -1,7 +1,4 @@
-// ============================================================
-// TYPING EFFECT - HERO
-// ============================================================
-
+// Typing Effect - Hero
 const typedText = document.getElementById('typed-text');
 const roles = [
     'MCA Student',
@@ -45,10 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 500);
 });
 
-// ============================================================
-// NAVBAR - ACTIVE LINK ON SCROLL
-// ============================================================
-
+// Navbar - Active link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -68,10 +62,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ============================================================
-// SCROLL ANIMATIONS - INTERSECTION OBSERVER
-// ============================================================
-
+// Scroll Animations - Intersection Observer
 const hiddenElements = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
@@ -85,10 +76,7 @@ const observer = new IntersectionObserver((entries) => {
 
 hiddenElements.forEach(el => observer.observe(el));
 
-// ============================================================
-// SKILL BARS - ANIMATE FILL WIDTH ON SCROLL
-// ============================================================
-
+// Skill Bars - Animate fill width on scroll
 const skillFills = document.querySelectorAll('.fill');
 
 const skillObserver = new IntersectionObserver((entries) => {
@@ -106,10 +94,7 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 skillFills.forEach(fill => skillObserver.observe(fill));
 
-// ============================================================
-// SKILL PERCENTAGE - ANIMATE NUMBERS COUNTING UP
-// ============================================================
-
+// Skill Percentage - Animate numbers counting up
 const percentElements = document.querySelectorAll('.percent');
 
 const percentObserver = new IntersectionObserver((entries) => {
@@ -133,10 +118,7 @@ const percentObserver = new IntersectionObserver((entries) => {
 
 percentElements.forEach(el => percentObserver.observe(el));
 
-// ============================================================
-// STATS COUNTER - ANIMATE NUMBERS COUNTING UP
-// ============================================================
-
+// Stats Counter - Animate numbers counting up
 const statNumbers = document.querySelectorAll('.stat-number[data-count]');
 
 const statObserver = new IntersectionObserver((entries) => {
@@ -159,10 +141,6 @@ const statObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 statNumbers.forEach(el => statObserver.observe(el));
-
-// ============================================================
-// POPUP FUNCTIONS
-// ============================================================
 
 // About Popup
 function openAbout() {
@@ -204,38 +182,29 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// ============================================================
-// WHATSAPP CONTACT FORM HANDLER (NEW)
-// ============================================================
-
+// WhatsApp Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
-    // Get form elements
     const form = document.getElementById('whatsappForm');
     const status = document.getElementById('formStatus');
     
-    // Check if form exists on page
     if (!form) {
         return;
     }
     
-    // Form submit handler
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
         const name = document.getElementById('formName').value.trim();
         const email = document.getElementById('formEmail').value.trim();
         const subject = document.getElementById('formSubject').value.trim();
         const message = document.getElementById('formMessage').value.trim();
         
-        // Validation
         if (!name || !email || !message) {
             status.innerHTML = '⚠️ Please fill in all fields.';
             status.style.color = '#ff6b6b';
             return;
         }
         
-        // Create WhatsApp message
         let whatsappMsg = 'New message from Portfolio:%0A%0A';
         whatsappMsg += '👤 Name: ' + name + '%0A';
         whatsappMsg += '📧 Email: ' + email + '%0A';
@@ -244,18 +213,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         whatsappMsg += '💬 Message: ' + message;
         
-        // WhatsApp number
         const phoneNumber = '91635359915993';
-        
-        // Open WhatsApp
         const whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + whatsappMsg;
         window.open(whatsappURL, '_blank');
         
-        // Show success status
         status.innerHTML = '✅ Redirecting to WhatsApp...';
         status.style.color = '#25D366';
         
-        // Reset form after 2 seconds
         setTimeout(function() {
             form.reset();
             status.innerHTML = '✨ Message sent! Check WhatsApp.';
@@ -263,10 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ============================================================
-// EMAIL FORM HANDLER (Optional - keeps old functionality)
-// ============================================================
-
+// Email Form Handler
 function sendEmailForm() {
     const name = document.getElementById('formName').value.trim();
     const email = document.getElementById('formEmail').value.trim();
@@ -305,4 +266,3 @@ function sendEmailForm() {
         status.style.color = '#ff6b6b';
     });
 }
-
