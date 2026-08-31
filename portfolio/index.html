@@ -26,6 +26,11 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
         </nav>
     </header>
 
@@ -364,8 +369,7 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT SECTION WITH WHATSAPP ===== -->
- 
+    <!-- Contact Section -->
     <section id="contact" class="hidden">
         <div class="contact-heading">
             <span>••• CONTACT</span>
@@ -374,52 +378,53 @@
         </div>
         <div class="contact-container">
             <div class="contact-info">
-                <!-- WhatsApp Card - NEW -->
+                <!-- WhatsApp Card -->
                 <a href="https://wa.me/91635359915993?text=Hi%20Sahil!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect." 
                    target="_blank" 
                    class="contact-card hidden" 
-                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 24px;"></i>
+                   style="transition-delay:0.0s; background: linear-gradient(135deg, #25D36615, #128C7E15); border: 1px solid #25D36640;">
+                    <i class="fab fa-whatsapp" style="color: #ffffff; font-size: 24px;"></i>
                     <div>
-                        <h3>WhatsApp</h3>
-                        <p>Quick reply • Click to chat</p>
+                        <h3 style="color: #ffffff;">WhatsApp</h3>
+                        <p style="color: #ffffff;">Quick reply • Click to chat</p>
                     </div>
-                    <span style="color: #25D366;">→</span>
+                    <span style="color: #ffffff;">→</span>
                 </a>
                 
                 <a href="mailto:mrsahil7878@gmail.com" class="contact-card hidden" style="transition-delay:0.1s;">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" style="color: #ffffff;"></i>
                     <div>
-                        <h3>Email</h3>
-                        <p>mrsahil7878@gmail.com</p>
+                        <h3 style="color: #ffffff;">Email</h3>
+                        <p style="color: #ffffff;">mrsahil7878@gmail.com</p>
                     </div>
-                    <span>→</span>
+                    <span style="color: #ffffff;">→</span>
                 </a>
                 <a href="https://github.com/sahil-7878" target="_blank" class="contact-card hidden" style="transition-delay:0.3s;">
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github" style="color: #ffffff;"></i>
                     <div>
-                        <h3>GitHub</h3>
-                        <p>sahil-7878</p>
+                        <h3 style="color: #ffffff;">GitHub</h3>
+                        <p style="color: #ffffff;">sahil-7878</p>
                     </div>
-                    <span>→</span>
+                    <span style="color: #ffffff;">→</span>
                 </a>
                 <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" class="contact-card hidden" style="transition-delay:0.5s;">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin" style="color: #ffffff;"></i>
                     <div>
-                        <h3>LinkedIn</h3>
-                        <p>Sahil Nerpagar</p>
+                        <h3 style="color: #ffffff;">LinkedIn</h3>
+                        <p style="color: #ffffff;">Sahil Nerpagar</p>
                     </div>
-                    <span>→</span>
+                    <span style="color: #ffffff;">→</span>
                 </a>
                 <div class="contact-card hidden" style="transition-delay:0.7s;">
-                    <i class="fas fa-location-dot"></i>
+                    <i class="fas fa-location-dot" style="color: #ffffff;"></i>
                     <div>
-                        <h3>Location</h3>
-                        <p>Surat, Gujrat India</p>
+                        <h3 style="color: #ffffff;">Location</h3>
+                        <p style="color: #ffffff;">Surat, Gujrat India</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Contact Form - UPDATED with WhatsApp redirect -->
+            <!-- Contact Form -->
             <form class="contact-form hidden" style="transition-delay:0.9s;" id="whatsappForm">
                 <input type="hidden" name="access_key" value="c5e62e09-566a-462c-a292-d1e8403ce820">
                 <input type="hidden" name="subject" value="New Portfolio Message">
@@ -429,20 +434,19 @@
                 <textarea name="message" id="formMessage" placeholder="Your Message" required></textarea>
                 
                 <!-- WhatsApp Send Button -->
-                <button type="submit" style="background: #25D366; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <button type="submit" style="background: #25D366; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 10px;">
                     <i class="fab fa-whatsapp"></i> Send via WhatsApp
                 </button>
                 
-                <!-- OR Email Send Button (optional) -->
-                <button type="button" onclick="sendEmailForm()" style="background: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <!-- Email Send Button -->
+                <button type="button" onclick="sendEmailForm()" style="background: #555; color: #ffffff; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
                     <i class="fas fa-envelope"></i> Send via Email
                 </button>
                 
-                <div id="formStatus" style="margin-top: 15px; font-size: 14px; text-align: center;"></div>
+                <div id="formStatus" style="margin-top: 15px; font-size: 14px; text-align: center; color: #ffffff;"></div>
             </form>
         </div>
     </section>
- 
 
     <!-- Footer -->
     <footer>© 2026 Sahil Nerpagar | All Rights Reserved ❤️</footer>
@@ -487,7 +491,6 @@
         <img src="profile.jpeg" class="full-image">
     </div>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 
 </body>
