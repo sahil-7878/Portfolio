@@ -364,7 +364,8 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ===== CONTACT SECTION WITH WHATSAPP ===== -->
+ 
     <section id="contact" class="hidden">
         <div class="contact-heading">
             <span>••• CONTACT</span>
@@ -373,6 +374,19 @@
         </div>
         <div class="contact-container">
             <div class="contact-info">
+                <!-- WhatsApp Card - NEW -->
+                <a href="https://wa.me/91635359915993?text=Hi%20Sahil!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect." 
+                   target="_blank" 
+                   class="contact-card hidden" 
+                   style="transition-delay:0.0s; background: linear-gradient(135deg, #25D36615, #128C7E15); border: 1px solid #25D36640;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 24px;"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick reply • Click to chat</p>
+                    </div>
+                    <span style="color: #25D366;">→</span>
+                </a>
+                
                 <a href="mailto:mrsahil7878@gmail.com" class="contact-card hidden" style="transition-delay:0.1s;">
                     <i class="fas fa-envelope"></i>
                     <div>
@@ -405,17 +419,31 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form hidden" style="transition-delay:0.9s;" action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- Contact Form - UPDATED with WhatsApp redirect -->
+            <form class="contact-form hidden" style="transition-delay:0.9s;" id="whatsappForm">
                 <input type="hidden" name="access_key" value="c5e62e09-566a-462c-a292-d1e8403ce820">
                 <input type="hidden" name="subject" value="New Portfolio Message">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email Address" autocomplete="email" required>
-                <input type="text" name="subject_line" placeholder="Subject">
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message 🚀</button>
+                <input type="text" name="name" id="formName" placeholder="Your Name" required>
+                <input type="email" name="email" id="formEmail" placeholder="Your Email Address" autocomplete="email" required>
+                <input type="text" name="subject_line" id="formSubject" placeholder="Subject">
+                <textarea name="message" id="formMessage" placeholder="Your Message" required></textarea>
+                
+                <!-- WhatsApp Send Button -->
+                <button type="submit" style="background: #25D366; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+                
+                <!-- OR Email Send Button (optional) -->
+                <button type="button" onclick="sendEmailForm()" style="background: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fas fa-envelope"></i> Send via Email
+                </button>
+                
+                <div id="formStatus" style="margin-top: 15px; font-size: 14px; text-align: center;"></div>
             </form>
         </div>
     </section>
+ 
 
     <!-- Footer -->
     <footer>© 2026 Sahil Nerpagar | All Rights Reserved ❤️</footer>
@@ -460,6 +488,7 @@
         <img src="profile.jpeg" class="full-image">
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 
 </body>
