@@ -1,268 +1,197 @@
 // Typing Effect - Hero
 const typedText = document.getElementById('typed-text');
-const roles = [
-    'MCA Student',
-    'Full Stack Developer',
-    'Frontend Developer',
-    'Backend Developer',
-    'Aspiring Software Developer'
-];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
+const roles = ['MCA Student', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer', 'Aspiring Software Developer'];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let roleIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
-    const currentRole = roles[roleIndex];
-    
+    const current = roles[roleIndex];
+    let speed;
+
     if (isDeleting) {
-        typedText.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
+        typedText.textContent = current.substring(0, --charIndex);
+        speed = 50;
     } else {
-        typedText.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
+        typedText.textContent = current.substring(0, ++charIndex);
+        speed = 100;
     }
 
-    if (!isDeleting && charIndex === currentRole.length) {
-        typingSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typingSpeed = 500;
-    }
+    if (!isDeleting && charIndex === current.length) { isDeleting = true; speed = 2000; }
+    else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; speed = 500; }
 
-    setTimeout(typeEffect, typingSpeed);
+    setTimeout(typeEffect, speed);
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-    typedText.textContent = '';
-    setTimeout(typeEffect, 500);
-});
 
 // Navbar - Active link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
+function setActiveLink() {
     let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+}
 
 // Scroll Animations - Intersection Observer
-const hiddenElements = document.querySelectorAll('.hidden');
-
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
             entry.target.classList.remove('hidden');
+            obs.unobserve(entry.target);
         }
     });
 }, { threshold: 0.17 });
 
-hiddenElements.forEach(el => observer.observe(el));
-
-// Skill Bars - Animate fill width on scroll
-const skillFills = document.querySelectorAll('.fill');
-
-const skillObserver = new IntersectionObserver((entries) => {
+// Skill Bars
+const skillObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const fill = entry.target;
-            const width = fill.getAttribute('data-width') || fill.style.width;
-            fill.style.width = '0%';
-            setTimeout(() => {
-                fill.style.width = width;
-            }, 100);
-        }
+        if (!entry.isIntersecting) return;
+        const fill = entry.target;
+        const width = fill.getAttribute('data-width') || fill.style.width;
+        fill.style.width = '0%';
+        setTimeout(() => { fill.style.width = width; }, 100);
+        obs.unobserve(fill);
     });
 }, { threshold: 0.3 });
 
-skillFills.forEach(fill => skillObserver.observe(fill));
-
-// Skill Percentage - Animate numbers counting up
-const percentElements = document.querySelectorAll('.percent');
-
-const percentObserver = new IntersectionObserver((entries) => {
+// Percent Counter
+const percentObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.getAttribute('data-target')) || 0;
-            let current = 0;
-            const increment = target / 30;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                el.textContent = Math.floor(current) + '%';
-            }, 40);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target')) || 0;
+        const start = performance.now();
+        const tick = now => {
+            const p = Math.min((now - start) / 1200, 1);
+            el.textContent = Math.floor(target * p) + '%';
+            if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        obs.unobserve(el);
     });
 }, { threshold: 0.4 });
 
-percentElements.forEach(el => percentObserver.observe(el));
-
-// Stats Counter - Animate numbers counting up
-const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-
-const statObserver = new IntersectionObserver((entries) => {
+// Stats Counter
+const statObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.getAttribute('data-count')) || 0;
-            let current = 0;
-            const increment = target / 15;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                el.textContent = Math.floor(current) + '+';
-            }, 30);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count')) || 0;
+        const suffix = el.getAttribute('data-suffix') ?? '+';
+        const start = performance.now();
+        const tick = now => {
+            const p = Math.min((now - start) / 900, 1);
+            el.textContent = Math.floor(target * p) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        obs.unobserve(el);
     });
 }, { threshold: 0.4 });
 
-statNumbers.forEach(el => statObserver.observe(el));
+// Popups
+function openPopup(id) { const p = document.getElementById(id); if (p) p.style.display = 'flex'; }
+function closePopup(id) { const p = document.getElementById(id); if (p) p.style.display = 'none'; }
+const openAbout = () => openPopup('aboutPopup');
+const closeAbout = () => closePopup('aboutPopup');
+const openAchievement = () => openPopup('achievementPopup');
+const closeAchievement = () => closePopup('achievementPopup');
+const openImage = () => openPopup('imagePopup');
+const closeImage = () => closePopup('imagePopup');
 
-// About Popup
-function openAbout() {
-    document.getElementById('aboutPopup').style.display = 'flex';
+// Contact form helpers
+const PHONE = '916359915993';
+function showStatus(msg, color) {
+    const s = document.getElementById('formStatus');
+    if (s) { s.innerHTML = msg; s.style.color = color; }
 }
-
-function closeAbout() {
-    document.getElementById('aboutPopup').style.display = 'none';
+function validateForm() {
+    const name = document.getElementById('formName')?.value.trim();
+    const email = document.getElementById('formEmail')?.value.trim();
+    const message = document.getElementById('formMessage')?.value.trim();
+    if (!name || !email || !message) { showStatus('⚠️ Please fill in all fields.', '#ff6b6b'); return null; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showStatus('⚠️ Please enter a valid email.', '#ff6b6b'); return null; }
+    return {
+        name, email, message,
+        subject: document.getElementById('formSubject')?.value.trim() || ''
+    };
 }
-
-// Achievement Popup
-function openAchievement() {
-    document.getElementById('achievementPopup').style.display = 'flex';
-}
-
-function closeAchievement() {
-    document.getElementById('achievementPopup').style.display = 'none';
-}
-
-// Image Popup
-function openImage() {
-    document.getElementById('imagePopup').style.display = 'flex';
-}
-
-function closeImage() {
-    document.getElementById('imagePopup').style.display = 'none';
-}
-
-// Close popups on outside click
-window.addEventListener('click', (e) => {
-    if (e.target === document.getElementById('aboutPopup')) {
-        closeAbout();
-    }
-    if (e.target === document.getElementById('achievementPopup')) {
-        closeAchievement();
-    }
-    if (e.target === document.getElementById('imagePopup')) {
-        closeImage();
-    }
-});
 
 // WhatsApp Contact Form Handler
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('whatsappForm');
-    const status = document.getElementById('formStatus');
-    
-    if (!form) {
-        return;
-    }
-    
-    form.addEventListener('submit', function(e) {
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
-        const name = document.getElementById('formName').value.trim();
-        const email = document.getElementById('formEmail').value.trim();
-        const subject = document.getElementById('formSubject').value.trim();
-        const message = document.getElementById('formMessage').value.trim();
-        
-        if (!name || !email || !message) {
-            status.innerHTML = '⚠️ Please fill in all fields.';
-            status.style.color = '#ff6b6b';
-            return;
-        }
-        
-        let whatsappMsg = 'New message from Portfolio:%0A%0A';
-        whatsappMsg += '👤 Name: ' + name + '%0A';
-        whatsappMsg += '📧 Email: ' + email + '%0A';
-        if (subject) {
-            whatsappMsg += '📌 Subject: ' + subject + '%0A';
-        }
-        whatsappMsg += '💬 Message: ' + message;
-        
-        const phoneNumber = '916359915993';
-        const whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + whatsappMsg;
-        window.open(whatsappURL, '_blank');
-        
-        status.innerHTML = '✅ Redirecting to WhatsApp...';
-        status.style.color = '#25D366';
-        
-        setTimeout(function() {
+        const data = validateForm();
+        if (!data) return;
+
+        let whatsappMsg = 'New message from Portfolio:\n\n';
+        whatsappMsg += '👤 Name: ' + data.name + '\n';
+        whatsappMsg += '📧 Email: ' + data.email + '\n';
+        if (data.subject) whatsappMsg += '📌 Subject: ' + data.subject + '\n';
+        whatsappMsg += '💬 Message: ' + data.message;
+
+        window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(whatsappMsg), '_blank', 'noopener');
+        showStatus('✅ Redirecting to WhatsApp...', '#25D366');
+        setTimeout(function () {
             form.reset();
-            status.innerHTML = '✨ Message sent! Check WhatsApp.';
+            showStatus('✨ Message sent! Check WhatsApp.', '#25D366');
         }, 2000);
     });
 });
 
-// Email Form Handler
+// Email Form Handler (Web3Forms)
 function sendEmailForm() {
-    const name = document.getElementById('formName').value.trim();
-    const email = document.getElementById('formEmail').value.trim();
-    const subject = document.getElementById('formSubject').value.trim();
-    const message = document.getElementById('formMessage').value.trim();
-    const status = document.getElementById('formStatus');
-    
-    if (!name || !email || !message) {
-        status.innerHTML = '⚠️ Please fill in all fields.';
-        status.style.color = '#ff6b6b';
-        return;
-    }
-    
+    const data = validateForm();
+    if (!data) return;
+
     const form = document.getElementById('whatsappForm');
-    const formData = new FormData(form);
-    
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-    })
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        if (data.success) {
-            status.innerHTML = '✅ Email sent successfully!';
-            status.style.color = '#25D366';
-            form.reset();
-        } else {
-            status.innerHTML = '❌ Something went wrong. Try again.';
-            status.style.color = '#ff6b6b';
-        }
-    })
-    .catch(function(error) {
-        status.innerHTML = '❌ Network error. Please try again.';
-        status.style.color = '#ff6b6b';
-    });
+    const btn = document.querySelector('[onclick="sendEmailForm()"]');
+    if (btn) btn.disabled = true;
+    showStatus('⏳ Sending...', '#888');
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+        .then(r => r.json())
+        .then(res => {
+            if (res.success) {
+                showStatus('✅ Email sent successfully!', '#25D366');
+                form.reset();
+            } else {
+                showStatus('❌ ' + (res.message || 'Something went wrong. Try again.'), '#ff6b6b');
+            }
+        })
+        .catch(() => showStatus('❌ Network error. Please try again.', '#ff6b6b'))
+        .finally(() => { if (btn) btn.disabled = false; });
 }
+
+// Popup outside-click & Escape
+window.addEventListener('click', e => {
+    if (e.target.id === 'aboutPopup') closeAbout();
+    if (e.target.id === 'achievementPopup') closeAchievement();
+    if (e.target.id === 'imagePopup') closeImage();
+});
+window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeAbout(); closeAchievement(); closeImage(); }
+});
+
+// Init
+window.addEventListener('DOMContentLoaded', () => {
+    // Typing
+    if (typedText) {
+        if (reduceMotion) { typedText.textContent = roles[0]; }
+        else { typedText.textContent = ''; setTimeout(typeEffect, 500); }
+    }
+    // Navbar
+    if (sections.length) {
+        setActiveLink();
+        window.addEventListener('scroll', setActiveLink, { passive: true });
+    }
+    // Observers
+    document.querySelectorAll('.hidden').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.fill').forEach(f => skillObserver.observe(f));
+    document.querySelectorAll('.percent').forEach(el => percentObserver.observe(el));
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => statObserver.observe(el));
+});
