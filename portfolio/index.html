@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Nerpagar | Portfolio</title>
+    <title>Sahil Nerpagar | Full Stack Developer & MCA Student</title>
+    <meta name="description" content="Portfolio of Sahil Nerpagar — MCA student and full stack developer building responsive web applications with the MERN stack.">
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sahil Nerpagar | Full Stack Developer">
+    <meta property="og:description" content="Portfolio of Sahil Nerpagar — MCA student and full stack developer.">
+    <meta property="og:image" content="profile.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/jpeg" href="profile.jpeg">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
@@ -13,11 +23,11 @@
 
 <body>
 
-    <div class="particles"></div>
+    <div class="particles" aria-hidden="true"></div>
 
     <!-- Navbar -->
     <header>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Primary">
             <div class="logo"><span>Portfolio</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -39,7 +49,7 @@
             <h1 class="hidden" style="transition-delay:200ms;"><span>Sahil</span> Nerpagar</h1>
             <h2 class="hidden" style="transition-delay:400ms;">
                 <span id="typed-text"></span>
-                <span class="cursor">|</span>
+                <span class="cursor" aria-hidden="true">|</span>
             </h2>
             <p class="hidden" style="transition-delay:600ms;">
                 Passionate about software development and creating solutions that make an impact.
@@ -51,12 +61,12 @@
                 innovation, and professional growth.
             </p>
             <div class="hero-btns hidden" style="transition-delay:900ms;">
-                <a href="#Achievements" class="btn" onclick="openAchievement()">
-                    Achievements <i class="fa-solid fa-arrow-right"></i>
+                <a href="#" class="btn" onclick="openAchievement(); return false;">
+                    Achievements <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </a>
-              <a href="Resume.pdf" class="btn-outline" download="Sahil-Resume.pdf">
-                    <i class="fa-solid fa-download"></i> Download Resume
-                 </a>
+                <a href="Resume.pdf" class="btn-outline" download="Sahil-Resume.pdf">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+                </a>
             </div>
         </div>
     </section>
@@ -66,10 +76,10 @@
 
         <!-- About -->
         <div class="card hidden" style="transition-delay:0.1s;">
-            <h2><i class="fa-regular fa-user"></i> About Me</h2>
+            <h2><i class="fa-regular fa-user" aria-hidden="true"></i> About Me</h2>
             <p class="about-text">
                 Hello! I'm Sahil Nerpagar, a second-year MCA
-                student at Bhagwan Mahavir Of college,Surat.
+                student at Bhagwan Mahavir College, Surat.
                 I enjoy turning ideas into practical solutions and continuously
                 challenging myself through hands-on learning and real-world
                 projects. I believe in learning by building, improving through
@@ -80,43 +90,43 @@
                 that help me gain industry experience and create meaningful impact.
             </p>
             <button class="read-btn" onclick="openAbout()">
-                Read More <i class="fa-solid fa-arrow-right"></i>
+                Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </button>
         </div>
 
         <!-- Skills -->
         <div class="card hidden" id="skills" style="transition-delay:0.4s;">
-            <h2><i class="fa-solid fa-code"></i> Skills</h2>
+            <h2><i class="fa-solid fa-code" aria-hidden="true"></i> Skills</h2>
             <div class="tech-grid">
-                <div class="tech-item"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
-                <div class="tech-item"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
-                <div class="tech-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
-                <div class="tech-item"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
-                <div class="tech-item"><i class="devicon-react-plain"></i><span>React.js</span></div>
-                <div class="tech-item"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
-                <div class="tech-item"><i class="devicon-express-original"></i><span>Express.js</span></div>
-                <div class="tech-item"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
-                <div class="tech-item"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
-                <div class="tech-item"><i class="devicon-git-plain"></i><span>Git</span></div>
-                <div class="tech-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-                <div class="tech-item"><i class="devicon-python-plain"></i><span>Python</span></div>
+                <div class="tech-item"><i class="devicon-html5-plain" aria-hidden="true"></i><span>HTML5</span></div>
+                <div class="tech-item"><i class="devicon-css3-plain" aria-hidden="true"></i><span>CSS3</span></div>
+                <div class="tech-item"><i class="devicon-javascript-plain" aria-hidden="true"></i><span>JavaScript</span></div>
+                <div class="tech-item"><i class="devicon-bootstrap-plain" aria-hidden="true"></i><span>Bootstrap</span></div>
+                <div class="tech-item"><i class="devicon-react-plain" aria-hidden="true"></i><span>React.js</span></div>
+                <div class="tech-item"><i class="devicon-nodejs-plain" aria-hidden="true"></i><span>Node.js</span></div>
+                <div class="tech-item"><i class="devicon-express-original" aria-hidden="true"></i><span>Express.js</span></div>
+                <div class="tech-item"><i class="devicon-mongodb-plain" aria-hidden="true"></i><span>MongoDB</span></div>
+                <div class="tech-item"><i class="devicon-mysql-plain" aria-hidden="true"></i><span>MySQL</span></div>
+                <div class="tech-item"><i class="devicon-git-plain" aria-hidden="true"></i><span>Git</span></div>
+                <div class="tech-item"><i class="devicon-github-original" aria-hidden="true"></i><span>GitHub</span></div>
+                <div class="tech-item"><i class="devicon-python-plain" aria-hidden="true"></i><span>Python</span></div>
             </div>
         </div>
 
         <!-- Education -->
         <div class="card hidden education-card" id="education" style="transition-delay:0.6s;">
-            <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <h2><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Education</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
                     <div class="timeline-content">
                         <span class="year-badge">2026 - Present</span>
                         <div class="edu-top">
                             <div>
                                 <h3>🎓 Master of Computer Applications (MCA)</h3>
                                 <p class="college lpu-college">
-                                    <i class="fa-solid fa-building-columns"></i> Bhagwan Mahavir University, Surat
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i> Bhagwan Mahavir University, Surat
                                 </p>
                                 <p class="edu-desc">
                                     Currently pursuing MCA with a focus on Full Stack Web Development, Software
@@ -128,12 +138,12 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="timeline-icon"><i class="fa-solid fa-school" aria-hidden="true"></i></div>
                     <div class="timeline-content">
                         <span class="year-badge">2022 - 2025</span>
                         <h3>🎓 Bachelor of Computer Applications (BCA)</h3>
                         <p class="college">
-                            <i class="fa-solid fa-building-columns"></i> SDJ International College
+                            <i class="fa-solid fa-building-columns" aria-hidden="true"></i> SDJ International College
                             Veer Narmad South Gujarat University (VNSGU), Surat
                         </p>
                         <p class="edu-desc">CGPA: 7.72 / 10</p>
@@ -141,12 +151,12 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="timeline-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
                     <div class="timeline-content">
                         <span class="year-badge">2020 - 2022</span>
                         <h3>🎓 Higher Secondary Certificate (HSC) – Class 12</h3>
                         <p class="college">
-                            <i class="fa-solid fa-school"></i> Shree Gurukrupa Vidhya Sankul GSEB Board
+                            <i class="fa-solid fa-school" aria-hidden="true"></i> Shree Gurukrupa Vidhya Sankul GSEB Board
                         </p>
                         <p class="edu-desc">Percentage: 75%</p>
                     </div>
@@ -166,25 +176,25 @@
         </div>
         <div class="stats-container">
             <div class="stat-card hidden">
-                <i class="fa-solid fa-code stat-icon"></i>
+                <i class="fa-solid fa-code stat-icon" aria-hidden="true"></i>
                 <div class="stat-number" data-count="10">0+</div>
                 <h3>Projects Completed</h3>
                 <p>Real-world development projects</p>
             </div>
             <div class="stat-card hidden">
-                <i class="fa-solid fa-laptop-code stat-icon"></i>
+                <i class="fa-solid fa-laptop-code stat-icon" aria-hidden="true"></i>
                 <div class="stat-number" data-count="1">0+</div>
                 <h3>Years Learning</h3>
                 <p>Continuous coding practice</p>
             </div>
             <div class="stat-card hidden">
-                <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                <i class="fa-solid fa-graduation-cap stat-icon" aria-hidden="true"></i>
                 <div class="stat-number" style="font-size:2.2rem;">MCA</div>
                 <h3>Student</h3>
                 <p>Master of Computer Applications</p>
             </div>
             <div class="stat-card hidden">
-                <i class="fa-solid fa-award stat-icon"></i>
+                <i class="fa-solid fa-award stat-icon" aria-hidden="true"></i>
                 <div class="stat-number" data-count="5">0+</div>
                 <h3>Certificates</h3>
                 <p>Technical courses and achievements</p>
@@ -195,18 +205,18 @@
     <!-- Projects -->
     <section id="projects" class="premium-projects">
         <div class="project-header">
-            <h2><i class="fa-solid fa-code"></i> Projects</h2>
+            <h2><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</h2>
         </div>
         <div class="premium-grid">
 
             <!-- Project 1 -->
             <div class="premium-card hidden card-1">
-                <div class="project-image"><img src="Netflix clone.jpg" alt="Netflix"></div>
+                <div class="project-image"><img src="Netflix clone.jpg" alt="Netflix Clone project preview" loading="lazy"></div>
                 <div class="project-info">
                     <div class="title-row">
                         <div class="title-left">
-                            <div class="project-icon"><i class="fa-solid fa-clapperboard"></i></div>
-                            <h3>Nerflix Clone</h3>
+                            <div class="project-icon"><i class="fa-solid fa-clapperboard" aria-hidden="true"></i></div>
+                            <h3>Netflix Clone</h3>
                         </div>
                     </div>
                     <p>
@@ -223,11 +233,11 @@
                         <span class="tag-mongo">MongoDB</span>
                     </div>
                     <div class="project-actions">
-                        <a href="https://netflix-clone-1-0q2d.onrender.com" target="_blank" class="view-btn">
-                            Live Demo <i class="fa-solid-arrow-up-right-from-square"></i>
+                        <a href="https://netflix-clone-1-0q2d.onrender.com" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/sahil-7878/Netflix--Clone" target="_blank" class="github-btn">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/sahil-7878/Netflix--Clone" target="_blank" rel="noopener noreferrer" class="github-btn" aria-label="Netflix Clone source on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -235,11 +245,11 @@
 
             <!-- Project 2 -->
             <div class="premium-card hidden card-2">
-                <div class="project-image"><img src="blog.jpg" alt="blog"></div>
+                <div class="project-image"><img src="blog.jpg" alt="Blog Publishing Platform project preview" loading="lazy"></div>
                 <div class="project-info">
                     <div class="title-row">
                         <div class="title-left">
-                            <div class="project-icon"><i class="fa-brands fa-blogger"></i></div>
+                            <div class="project-icon"><i class="fa-brands fa-blogger" aria-hidden="true"></i></div>
                             <h3>Blog Publishing Platform</h3>
                         </div>
                     </div>
@@ -258,11 +268,11 @@
                         <span class="tag-mongo">MongoDB</span>
                     </div>
                     <div class="project-actions">
-                        <a href="https://blog-publishing-website-1.onrender.com" target="_blank" class="view-btn">
-                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <a href="https://blog-publishing-website-1.onrender.com" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/sahil-7878/Blog-Publishing-Website" target="_blank" class="github-btn">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/sahil-7878/Blog-Publishing-Website" target="_blank" rel="noopener noreferrer" class="github-btn" aria-label="Blog Publishing Platform source on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -270,11 +280,11 @@
 
             <!-- Project 3 -->
             <div class="premium-card hidden card-3">
-                <div class="project-image"><img src="franky junction.jpg" alt="Portfolio"></div>
+                <div class="project-image"><img src="franky junction.jpg" alt="Franky Junction food ordering project preview" loading="lazy"></div>
                 <div class="project-info">
                     <div class="title-row">
                         <div class="title-left">
-                            <div class="project-icon"><i class="fa-solid fa-burger"></i></div>
+                            <div class="project-icon"><i class="fa-solid fa-burger" aria-hidden="true"></i></div>
                             <h3>Franky Junction – Online Food Ordering Website</h3>
                         </div>
                     </div>
@@ -288,16 +298,16 @@
                         <span class="tag-html">HTML</span>
                         <span class="tag-css">CSS</span>
                         <span class="tag-js">JavaScript</span>
-                         <span class="tag-node">Node.js</span>
+                        <span class="tag-node">Node.js</span>
                         <span class="tag-express">Express.js</span>
                         <span class="tag-mongo">MongoDB</span>
                     </div>
                     <div class="project-actions">
-                        <a href="https://frankie-phi.vercel.app/" target="_blank" class="view-btn">
-                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <a href="https://frankie-phi.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-btn">
+                            Live Demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/sahil-7878/frankie" target="_blank" class="github-btn">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/sahil-7878/frankie" target="_blank" rel="noopener noreferrer" class="github-btn" aria-label="Franky Junction source on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -315,22 +325,22 @@
         </div>
         <div class="services-container">
             <div class="service-card hidden">
-                <i class="fa-solid fa-code"></i>
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
                 <h3>Frontend Development</h3>
                 <p>Building responsive and interactive websites using HTML, CSS, JavaScript and modern UI practices.</p>
             </div>
             <div class="service-card hidden">
-                <i class="fa-solid fa-server"></i>
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
                 <h3>Backend Development</h3>
                 <p>Creating APIs and backend systems using Node.js, Express.js and MongoDB.</p>
             </div>
             <div class="service-card hidden">
-                <i class="fa-solid fa-layer-group"></i>
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                 <h3>Full Stack Development</h3>
                 <p>Developing complete web applications from frontend design to database integration.</p>
             </div>
             <div class="service-card hidden">
-                <i class="fa-solid fa-mobile-screen"></i>
+                <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
                 <h3>Responsive Design</h3>
                 <p>Creating websites that work smoothly on desktop, tablet and mobile devices.</p>
             </div>
@@ -346,19 +356,19 @@
         </div>
         <div class="social-container">
             <a href="mailto:mrsahil7878@gmail.com" class="social-card">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 <h3>Email</h3>
             </a>
-            <a href="https://github.com/sahil-7878" target="_blank" class="social-card">
-                <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/sahil-7878" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
                 <h3>GitHub</h3>
             </a>
-            <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" class="social-card">
-                <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <h3>LinkedIn</h3>
             </a>
-            <a href="https://www.instagram.com/mr_saahil.15/" class="social-card">
-                <i class="fa-brands fa-instagram"></i>
+            <a href="https://www.instagram.com/mr_saahil.15/" target="_blank" rel="noopener noreferrer" class="social-card">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 <h3>Instagram</h3>
             </a>
         </div>
@@ -373,72 +383,73 @@
         </div>
         <div class="contact-container">
             <div class="contact-info">
-                <!-- WhatsApp Card - NO GREEN BACKGROUND -->
-                <a href="https://wa.me/91635359915993?text=Hi%20Sahil!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect." 
-                   target="_blank" 
-                   class="contact-card hidden" 
+                <a href="https://wa.me/916359915993?text=Hi%20Sahil!%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect."
+                   target="_blank" rel="noopener noreferrer"
+                   class="contact-card hidden"
                    style="transition-delay:0.0s;">
-                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 24px;"></i>
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 24px;" aria-hidden="true"></i>
                     <div>
                         <h3>WhatsApp</h3>
                         <p>Quick reply • Click to chat</p>
                     </div>
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                 </a>
-                
+
                 <a href="mailto:mrsahil7878@gmail.com" class="contact-card hidden" style="transition-delay:0.1s;">
-                    <i class="fas fa-envelope" style="color: #D44638; font-size: 20px;"></i>
+                    <i class="fas fa-envelope" style="color: #D44638; font-size: 20px;" aria-hidden="true"></i>
                     <div>
                         <h3>Email</h3>
                         <p>mrsahil7878@gmail.com</p>
                     </div>
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                 </a>
-                <a href="https://github.com/sahil-7878" target="_blank" class="contact-card hidden" style="transition-delay:0.3s;">
-                    <i class="fab fa-github" style="color: #ffffff; font-size: 20px;"></i>
+                <a href="https://github.com/sahil-7878" target="_blank" rel="noopener noreferrer" class="contact-card hidden" style="transition-delay:0.3s;">
+                    <i class="fab fa-github" style="color: #ffffff; font-size: 20px;" aria-hidden="true"></i>
                     <div>
                         <h3>GitHub</h3>
                         <p>sahil-7878</p>
                     </div>
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                 </a>
-                <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" class="contact-card hidden" style="transition-delay:0.5s;">
-                    <i class="fab fa-linkedin" style="color: #0A66C2; font-size: 20px;"></i>
+                <a href="https://www.linkedin.com/in/sahilnerpagar/" target="_blank" rel="noopener noreferrer" class="contact-card hidden" style="transition-delay:0.5s;">
+                    <i class="fab fa-linkedin" style="color: #0A66C2; font-size: 20px;" aria-hidden="true"></i>
                     <div>
                         <h3>LinkedIn</h3>
                         <p>Sahil Nerpagar</p>
                     </div>
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                 </a>
                 <div class="contact-card hidden" style="transition-delay:0.7s;">
-                    <i class="fas fa-location-dot" style="color: #ffffff; font-size: 20px;"></i>
+                    <i class="fas fa-location-dot" style="color: #ffffff; font-size: 20px;" aria-hidden="true"></i>
                     <div>
                         <h3>Location</h3>
-                        <p>Surat, Gujrat India</p>
+                        <p>Surat, Gujarat India</p>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Contact Form -->
             <form class="contact-form hidden" style="transition-delay:0.9s;" id="whatsappForm">
                 <input type="hidden" name="access_key" value="c5e62e09-566a-462c-a292-d1e8403ce820">
                 <input type="hidden" name="subject" value="New Portfolio Message">
-                <input type="text" name="name" id="formName" placeholder="Your Name" required>
+                <label for="formName" class="sr-only">Your Name</label>
+                <input type="text" name="name" id="formName" placeholder="Your Name" autocomplete="name" required>
+                <label for="formEmail" class="sr-only">Your Email Address</label>
                 <input type="email" name="email" id="formEmail" placeholder="Your Email Address" autocomplete="email" required>
-                <input type="text" name="subject_line" id="formSubject" placeholder="Subject">
+                <label for="formSubject" class="sr-only">Subject</label>
+                <input type="text" name="user_subject" id="formSubject" placeholder="Subject">
+                <label for="formMessage" class="sr-only">Your Message</label>
                 <textarea name="message" id="formMessage" placeholder="Your Message" required></textarea>
-                
-                <!-- WhatsApp Send Button -->
+
                 <button type="submit" style="background: #25D366; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Send via WhatsApp
                 </button>
-                
-                <!-- Email Send Button -->
+
                 <button type="button" onclick="sendEmailForm()" style="background: #555; color: #ffffff; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                    <i class="fas fa-envelope"></i> Send via Email
+                    <i class="fas fa-envelope" aria-hidden="true"></i> Send via Email
                 </button>
-                
-                <div id="formStatus" style="margin-top: 15px; font-size: 14px; text-align: center;"></div>
+
+                <div id="formStatus" role="status" aria-live="polite" style="margin-top: 15px; font-size: 14px; text-align: center;"></div>
             </form>
         </div>
     </section>
@@ -447,10 +458,10 @@
     <footer>© 2026 Sahil Nerpagar | All Rights Reserved ❤️</footer>
 
     <!-- Popups -->
-    <div class="about-popup" id="aboutPopup">
+    <div class="about-popup" id="aboutPopup" role="dialog" aria-modal="true" aria-labelledby="aboutPopupTitle" aria-hidden="true">
         <div class="popup-content">
-            <span class="close-btn" onclick="closeAbout()">&times;</span>
-            <h2>About Me</h2>
+            <button class="close-btn" onclick="closeAbout()" aria-label="Close About dialog">&times;</button>
+            <h2 id="aboutPopupTitle">About Me</h2>
             <p>
                 Beyond academics, I strongly believe that learning should
                 never stop. I enjoy exploring new ideas, understanding
@@ -472,22 +483,21 @@
         </div>
     </div>
 
-    <div class="about-popup" id="achievementPopup">
+    <div class="about-popup" id="achievementPopup" role="dialog" aria-modal="true" aria-labelledby="achievementPopupTitle" aria-hidden="true">
         <div class="popup-content">
-            <span class="close-btn" onclick="closeAchievement()">&times;</span>
-            <h2>🏆 Achievements & Certifications</h2>
-            <p><a href="cirtificate/html,css.jpg" target="_blank">🏆 Html, CSS course Certificate</a></p>
-            <p><a href="cirtificate/full stack.jpg" target="_blank">💻 Full Stack Development Certificate</a></p>
+            <button class="close-btn" onclick="closeAchievement()" aria-label="Close Achievements dialog">&times;</button>
+            <h2 id="achievementPopupTitle">🏆 Achievements &amp; Certifications</h2>
+            <p><a href="cirtificate/html,css.jpg" target="_blank" rel="noopener noreferrer">🏆 HTML, CSS course Certificate</a></p>
+            <p><a href="cirtificate/full stack.jpg" target="_blank" rel="noopener noreferrer">💻 Full Stack Development Certificate</a></p>
         </div>
     </div>
 
-    <div id="imagePopup" class="image-popup">
-        <span class="close-image" onclick="closeImage()">&times;</span>
-        <img src="profile.jpeg" class="full-image">
+    <div id="imagePopup" class="image-popup" role="dialog" aria-modal="true" aria-labelledby="imagePopupTitle" aria-hidden="true">
+        <button class="close-image" onclick="closeImage()" aria-label="Close image">&times;</button>
+        <img src="profile.jpeg" class="full-image" alt="Sahil Nerpagar" loading="lazy">
     </div>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
