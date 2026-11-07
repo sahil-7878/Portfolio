@@ -43,19 +43,20 @@ The website focuses on a clean UI, responsive design, smooth animations, interac
 
 ## 💼 Featured Projects
 
-### 🎬 Netflix Clone
+### 🗓️ LeavePro - Employee Leave Management System
 
-A Netflix-inspired streaming website with a modern movie browsing interface.
+A full-stack employee leave management system with a modern dashboard for managing employee leave requests.
 
 **Highlights:**
 
-* Streaming platform style UI
-* Movie sections
-* Trending content
-* Responsive design
-* Modern dark interface
-
----
+* Employee leave application
+* Leave balance tracking
+* Leave request history
+* Manager approval and rejection
+* Role-based access control
+* JWT authentication
+* Employee and department management
+* Responsive dashboard
 
 ### 📝 Blog Publishing Website
 
